@@ -61,19 +61,14 @@ function addNewDiv() {
   `;
   document.body.append(newdiv);
   let divs = JSON.parse(localStorage.getItem("divs")) || [];
-  divs.push(newdiv.outerHTML);
+  divs.push(newdiv.innerHTML);
   localStorage.setItem("divs", JSON.stringify(divs));
 }
 
 function setDiv() {
-  // Set user name
   user.innerHTML = "Guest " + Math.floor(Math.random() * 1000) + 1;
-  
-  // Get divs from localStorage
   const divs = JSON.parse(localStorage.getItem("divs")) || [];
-
-  // Add divs to the page
-  divs.forEach(divHTML => {
+    divs.forEach(divHTML => {
     const div = document.createElement("div");
     div.id = "newdiv";
     div.innerHTML = divHTML;
@@ -81,6 +76,5 @@ function setDiv() {
   });
 }
 
-// Initialize the page
 setDiv();
 
