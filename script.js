@@ -13,3 +13,10 @@ window.addEventListener('click', function(e){
     menuList.style.display = "none"
   } 
 })
+document.getElementById("start").onclick = function() {
+    window.location.href = "pages/logs.html"
+}
+window.onload = function start() {
+    let user = document.getElementById("user")
+    user.innerHTML = "Guest " + Math.floor(Math.random() * (1000 - 1 + 1)) + 1;
+}
